@@ -1,7 +1,8 @@
 MQTT addon for Kodi
 ===================
 
-  Written and (C) 2015-16 Oliver Wagner <owagner@tellerulam.com> 
+  Written and (C) 2015-16 Oliver Wagner <owagner@tellerulam.com>
+  Additional changes: See [service.mqtt/changelog.txt](service.mqtt/changelog.txt)
   
   Provided under the terms of the MIT license.
 
@@ -27,8 +28,6 @@ Dependencies
 * Kodi 14 Helix (or newer). Tested with 16.1. works also with 18.5 on Ubuntu
 * Eclipse Paho for Python - http://www.eclipse.org/paho/clients/python/
   (used for MQTT communication)
-
-[![Build Status](https://travis-ci.org/owagner/kodi2mqtt.svg)](https://travis-ci.org/owagner/kodi2mqtt) Automatically built addons can be downloaded from the release page on GitHub at https://github.com/owagner/kodi2mqtt/releases
 
 
 Settings
@@ -98,4 +97,3 @@ See also
 Changelog
 ---------
 Please see [service.mqtt/changelog.txt](service.mqtt/changelog.txt) for the change log
-  
