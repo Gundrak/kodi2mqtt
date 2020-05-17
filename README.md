@@ -24,7 +24,7 @@ Modifications from original owanger version:
 
 Dependencies
 ------------
-* Kodi 14 Helix (or newer). Tested with 16.1.
+* Kodi 14 Helix (or newer). Tested with 16.1. works also with 18.5 on Ubuntu
 * Eclipse Paho for Python - http://www.eclipse.org/paho/clients/python/
   (used for MQTT communication)
 
