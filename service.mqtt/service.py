@@ -5,6 +5,7 @@ import xbmc,xbmcaddon
 import json
 import threading
 import time
+import os
 import socket
 from lib import client as mqtt
 
@@ -151,7 +152,13 @@ class MQTTMonitor(xbmc.Monitor):
                 setplaystate(1,"started")
         except Exception:
             import traceback
-            mqttlogging("MQTT: "+traceback.format_exc())	
+            mqttlogging("MQTT: "+traceback.format_exc())
+
+    def onScreensaverActivated(self):
+        publish("screensaver",1,"")
+
+    def onScreensaverDeactivated(self):
+        publish("screensaver",0,"")
 
 class MQTTPlayer(xbmc.Player):
 
@@ -247,6 +254,12 @@ def processsendcomand(data):
     except ValueError:
         mqttlogging("MQTT: JSON-RPC call ValueError")
 
+def processcecstate(data):
+	if data=="1" or data=="activate":
+		#Stupid workaround to wake TV
+		mqttlogging("CEC Activate")
+		os.system('kodi-send --action=""')
+
 def processcommand(topic,data):
     if topic=="notify":
         processnotify(data)
@@ -260,6 +273,8 @@ def processcommand(topic,data):
         processsendcomand(data)
     elif topic=="volume":
         processvolume(data)
+    elif topic=="cecstate":
+        processcecstate(data)
     else:
         mqttlogging("MQTT: Unknown command "+topic)
 
