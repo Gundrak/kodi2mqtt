@@ -18,7 +18,7 @@ See https://github.com/mqtt-smarthome for a rationale and architectural overview
 
 Modifications from original owanger version:
 * Bugfix: playing/resumed events now fire consistently
-* Bugfix: Updated Paho to 1.5 to fix reconnect crash
+* Bugfix: Updated Paho to 1.5 to fix reconnect crash (https://github.com/eclipse/paho.mqtt.python)
 * Feature: All Kodi API notification events are published
 * Feature: Volume control
 
