@@ -300,7 +300,10 @@ def connecthandler(mqc,userdata,flags,rc):
 def disconnecthandler(mqc,userdata,rc):
     mqttlogging("MQTT: Disconnected from MQTT broker with rc=%d" % (rc))
     time.sleep(5)
-    mqc.reconnect()
+    try:
+        mqc.reconnect()
+    except Exception as e:
+        mqttlogging("MQTT: Error while reconnectig: message %s: %s" % (type(e).__name__,e))
 
 #
 # Starts connection to the MQTT broker, sets the will
