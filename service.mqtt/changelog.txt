@@ -1,3 +1,11 @@
+v0.20 - 2020-05-2020
+  - Fork from richcrabtree
+  - Merged rubikscuber changes (Fix for netflixaddon) 
+  - Merged muracz changes (Simple screensaver notification, TV wake-up workaround/cecstate command)
+  - Merge mariansoban changes (Handle MQTT reconnect exceptions)
+  - Send current title together with progress, so know what's playing with for example radio streams,
+    which change their title without notification
+
 v0.16 - 2019-12-16 - richcrabtree
   - Bugfix: playing/resumed events now fire consistently
   - Bugfix: Updated Paho to 1.5 to fix reconnect crash

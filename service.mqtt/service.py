@@ -109,6 +109,9 @@ def publishprogress():
         progress=0
     state={"kodi_time":convtime(pt),"kodi_totaltime":convtime(tt)}
     publish("progress","%.1f" % progress,state)
+    # Publish title at interval, this is for things like radio streams that change the title without notification
+    title=xbmc.getInfoLabel('Player.Title')
+    publish("playertitle",title,{})
 
 #
 # Publish more details about the currently playing item
